@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "NODE_ENV=development webpack-dev-server",
     "build": "NODE_ENV=production webpack --progress --hide-modules",
-    "deploy": "npm run build && rsync -av --delete build/ eyeofthetiger2:dataaddict.fr/prenoms/",
+    "deploy": "gh-pages -d build",
     "fonts": "ttf2woff src/fonts/HelveticaLTStd-Bold.otf src/fonts/HelveticaLTStd-Bold.woff && ttf2woff src/fonts/HelveticaLTStd-Roman.otf src/fonts/HelveticaLTStd-Roman.woff && ttf2woff2 < src/fonts/HelveticaLTStd-Bold.otf > src/fonts/HelveticaLTStd-Bold.woff2 && ttf2woff2 < src/fonts/HelveticaLTStd-Roman.otf > src/fonts/HelveticaLTStd-Roman.woff2",
     "get": "node bin/get.js",
     "get-homonyms": "node bin/get-homonyms.js",
@@ -56,6 +56,7 @@
     "eslint-plugin-promise": "3.5.0",
     "eslint-plugin-standard": "2.1.1",
     "eslint-plugin-vue": "2.0.1",
+    "gh-pages": "^3.2.3",
     "standard": "8.6.0",
     "ttf2woff": "2.0.1",
     "ttf2woff2": "2.0.3"
