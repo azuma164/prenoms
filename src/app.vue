@@ -170,10 +170,10 @@ ul.forenames-list
   content
     .left-side
       .title
-        h2 De 1945 à 2015 :
-        h1 70 ans de prénoms en France
+        h2 1950-2020 :
+        h1 70年間の物件の名称の変化
       form.search
-        input(type="text" autocomplete="off" placeholder="Recherche..." v-model="searchQuery")
+        input(type="text" autocomplete="off" placeholder="Research..." v-model="searchQuery")
         img.search-image(src="./images/search.png")
         a.clear(href="#" v-show="searchQuery.length" @click="searchQuery = ''")
           img(src="./images/clear.png")/
