@@ -1,20 +1,12 @@
 <style lang="stylus">
-@import "./css/colors"
+@import "./css/header.css";
+@import "./css/colors";
 
 html
   height 100%
   margin 0
   padding 0
 
-a:visited
-  color: #6e4cb9
-
-body
-  font-family "HelveticaLTStd-Roman", sans-serif
-  font-size 18px
-  //width $width - 17px*2
-  color color1
-  background-color #fff
 
 body, #app, content
   height 100%
@@ -28,7 +20,6 @@ content
   margin-bottom: 10px
   margin-top: 10px
   h1
-    color: color-male
     font-family: "HelveticaLTStd-Bold"
     font-size: 35px
   h2
@@ -100,6 +91,28 @@ ul.forenames-list
     &.selected
       line-height 1
       color white
+    &.en
+      color color-en
+    &.ge
+      color color-ge
+    &.fr
+      color color-fr
+    &.de
+      color color-de
+    &.es
+      color color-es      
+    &.it
+      color color-it
+    &.la
+      color color-la
+    &.el
+      color color-el
+    &.ru
+      color color-ru
+    &.pt
+      color color-pt
+    &.ja
+      color color-ja  
 
 .share-url
   cursor: crosshair
@@ -134,8 +147,25 @@ ul.forenames-list
   .explanations
     margin-top: 1em
 </style>
-
 <template lang="pug">
+//- <div id='app'>
+//-   <header>
+//-     <h1>
+//-         <a href="http://localhost:8887/home.html">建物<span>名</span>で眺める物件</a>
+//-     </h1>
+//-     //- <a href="http://localhost:8887/language.html">遷移</a>
+//-     <nav class="nav">
+//-         <ul>
+//-             //- <li><router-link to="/lang">言語</router-link></li>
+//-             <li><a href='http://localhost:8887/language.html'>言語</a></li>
+//-             //- <li><router-link to="/bubble">意味</router-link></li>
+//-             <li><a href='http://localhost:8887/meaning.html'>意味</a></li>
+//-             <li><router-link to="/">時代</router-link></li>
+//-         </ul>
+//-     </nav>
+//-   </header>
+//-   <router-view/>
+//- </div>
 #app
   content
     .left-side
@@ -162,18 +192,6 @@ ul.forenames-list
         @forename:remove="toggleForename",
         @year-range="setYearRange"
       )
-      .bottom
-        .block
-          .share-url
-            div Partagez ces résultats avec ce lien :
-            input(ref="share-url" type="text" @click="selectUrl", :value="shareUrl")
-          .social-links
-            iframe(src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fdataaddict.fr%2Fprenoms%2F&layout=button_count&size=large&mobile_iframe=true&appId=388906134841894&width=120&height=28" width="120" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true")
-            a.twitter-share-button(href="https://twitter.com/share" data-size="large" data-via="_Data_Addict_" data-lang="fr" data-hashtags="70ansdeprénoms")
-            a.github-button(href="https://github.com/dataaddict/prenoms" data-style="mega" aria-label="Star dataaddict/prenoms on GitHub") Star
-        .explanations
-          | Les prénoms sélectionnés sont les plus courants en France, ils ont été donnés au moins 2000 fois entre 1945 et 2015. Source :
-          a(href="https://www.insee.fr/fr/statistiques/2540004" target="_blank") Insee - Fichier des prénoms (Édition 2016)
 </template>
 
 <script>
@@ -220,6 +238,7 @@ export default {
     selectedForenames (forenames) {
       window.location.hash = forenames.map(d => d.id + '-' + (d.sex === 'm' ? 'h' : 'f')).join(',')
       this.shareUrl = window.location.toString()
+      console.log('watch!')
     }
   },
 
@@ -255,21 +274,6 @@ export default {
       const backgroundColor = forenameData.selected ? forenameColor(forenameData) : ''
       return _.assign({ backgroundColor }, forenameData.style)
     },
-
-    // selectUrl () {
-    //   // http://stackoverflow.com/a/1173319
-    //   const el = this.$refs['share-url']
-    //
-    //   if (document.selection) {
-    //     var range = document.body.createTextRange()
-    //     range.moveToElementText(el)
-    //     range.select()
-    //   } else if (window.getSelection) {
-    //     const range = document.createRange()
-    //     range.selectNode(el)
-    //     window.getSelection().addRange(range)
-    //   }
-    // }
     selectUrl () {
       this.$refs['share-url'].select()
     }
