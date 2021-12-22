@@ -29,15 +29,22 @@ content
     margin: 0
 
 .left-side
-  max-width 500px
-  min-width 300px
-  width 33%
-  display: flex
-  flex-direction: column
-  margin-bottom: 10px
+  width: 50%;
+  height: 710px;
+  float: left;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 4px solid #19b244;
+  margin: 10px;
 
 .right-side
-  flex: 1
+  width: 50%;
+  height: 710px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 4px solid #19b244;
+  margin: 10px;
+  float: right;
 
 form.search
   position: relative
@@ -170,8 +177,7 @@ ul.forenames-list
   content
     .left-side
       .title
-        h2 1950-2021 :
-        h1 70年間の物件の名称の変化
+        h2 時代で見る
       form.search
         input(type="text" autocomplete="off" placeholder="Research..." v-model="searchQuery")
         img.search-image(src="./images/search.png")
