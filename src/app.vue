@@ -170,7 +170,7 @@ ul.forenames-list
   content
     .left-side
       .title
-        h2 1950-2020 :
+        h2 1950-2021 :
         h1 70年間の物件の名称の変化
       form.search
         input(type="text" autocomplete="off" placeholder="Research..." v-model="searchQuery")
