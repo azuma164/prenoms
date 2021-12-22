@@ -36,6 +36,8 @@ content
   border-radius: 10px;
   border: 4px solid #19b244;
   margin: 10px;
+  display: flex;
+  flex-direction: column;
 
 .right-side
   width: 50%;
@@ -160,12 +162,12 @@ ul.forenames-list
 //-     <h1>
 //-         <a href="http://localhost:8887/home.html">建物<span>名</span>で眺める物件</a>
 //-     </h1>
-//-     //- <a href="http://localhost:8887/language.html">遷移</a>
+//-     <a href="http://localhost:8887/language.html">遷移</a>
 //-     <nav class="nav">
 //-         <ul>
-//-             //- <li><router-link to="/lang">言語</router-link></li>
+//-             <li><router-link to="/lang">言語</router-link></li>
 //-             <li><a href='http://localhost:8887/language.html'>言語</a></li>
-//-             //- <li><router-link to="/bubble">意味</router-link></li>
+//-             <li><router-link to="/bubble">意味</router-link></li>
 //-             <li><a href='http://localhost:8887/meaning.html'>意味</a></li>
 //-             <li><router-link to="/">時代</router-link></li>
 //-         </ul>
@@ -175,6 +177,7 @@ ul.forenames-list
 //- </div>
 #app
   content
+    .Header
     .left-side
       .title
         h2 時代で見る
@@ -205,10 +208,11 @@ import { forenameColor, initialRange, maxBirthsCount, years } from './utils'
 import * as d3 from 'd3'
 import _ from 'lodash'
 import graph from './graph.vue'
+import Header from './Header.vue'
 
 export default {
   name: 'app',
-  components: { graph },
+  components: { graph, Header },
   data () {
     return {
       forenames: [],
