@@ -1,5 +1,5 @@
 module.exports = {
-    outputDir: 'docs',
-    assetsDir: './',
-    publicPath: './',
+    publicPath: process.env.NODE_ENV === 'production'
+      ? '/weather-app/'   //任意
+      : '/'
   }
