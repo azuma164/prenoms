@@ -157,6 +157,7 @@ ul.forenames-list
     margin-top: 1em
 </style>
 <template lang="pug">
+
 //- <div id='app'>
 //-   <header>
 //-     <h1>
