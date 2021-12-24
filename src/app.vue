@@ -176,8 +176,19 @@ ul.forenames-list
 //-   <router-view/>
 //- </div>
 #app
+  header
+    h1
+      a(href="https://azuma164.github.io/house_zoom_app/") 建物名で眺める物件 
+   
+    nav(class="nav")
+      ul
+        li
+          a(href="https://azuma164.github.io/house_zoom_app/language") 言語
+        li
+          a(href="https://azuma164.github.io/house_zoom_app/meaning") 意味
+        li
+          router-link(to="/") 時代
   content
-    .Header
     .left-side
       .title
         h2 時代で見る
