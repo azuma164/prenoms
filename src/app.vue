@@ -188,7 +188,7 @@ ul.forenames-list
         li
           a(href="https://azuma164.github.io/house_zoom_app/meaning") 意味
         li
-          router-link(to="/") 時代
+          a(href="https://azuma164.github.io/prenoms/") 時代
   content
     .left-side
       .title
